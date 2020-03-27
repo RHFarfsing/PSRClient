@@ -1,0 +1,52 @@
+<app-main-menu></app-main-menu>
+<div class="component">
+    <table class="table table-striped table-sm">
+        <tr>
+            <td>Id</td>
+            <td>
+                <input [ngModel]="product.id" type="text" size="10" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>PartNbr</td>
+            <td>
+                <input [ngModel]="product.partNbr" type="text" size="10" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input [ngModel]="product.name" type="text" size="20" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>
+                <input [ngModel]="product.price" type="number" size="20" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>Unit</td>
+            <td>
+                <input [ngModel]="product.id" type="text" size="10" disabled>
+            </td>
+        </tr>
+        <tr *ngIf="product.vendor">
+            <td>Vendor</td>
+            <td>
+                <input [ngModel]="product.vendor.name" type="text" disabled>
+            </td>
+        </tr>
+        <tr *ngIf="!product.vendor">
+            <td>Vendor</td>
+            <td>
+                <input value="UNDECLARED" type="text" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="delete()" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>

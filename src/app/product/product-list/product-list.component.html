@@ -1,0 +1,26 @@
+<app-main-menu></app-main-menu>
+<a routerLink="/products/create">Create</a>
+<div class="component">
+    <table class="table table-sm">
+        <tr>
+            <th>Id</th>
+            <th>PartNbr</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Unit</th>
+            <th>Vendor</th>
+        </tr>
+        <tr *ngFor="let p of products | sort:'partNbr'">
+            <td>{{p.id}}</td>
+            <td>{{p.partNbr}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.unit}}</td>
+            <td>{{p.vendorId != null ? p.vendor.name : "UNDECLARED"}}</td>
+            <td>
+                <a routerLink="/products/detail/{{p.id}}">Detail</a> | 
+                <a routerLink="/products/edit/{{p.id}}">Edit</a>
+            </td>
+        </tr>
+    </table>
+</div>
