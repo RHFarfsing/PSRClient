@@ -1,1 +1,28 @@
-<p>vendor-list works!</p>
+<app-main-menu></app-main-menu>
+<a routerLink="/vendors/create">Create</a>
+<div class="component">
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let v of vendors | sort:'code'">
+            <td>{{v.id}}</td>
+            <td>{{v.code}}</td>
+            <td>{{v.name}}</td>
+            <td>{{v.address}} {{v.city}} {{v.state}} {{v.zip}}</td>
+            <td>{{v.phone}}</td>
+            <td>{{v.email}}</td>
+            <td>
+                <a routerLink="/vendors/detail/{{v.id}}">Detail</a> | 
+                <a routerLink="/vendors/edit/{{v.id}}">Edit</a>
+            </td>
+        </tr>
+    </table>
+</div>

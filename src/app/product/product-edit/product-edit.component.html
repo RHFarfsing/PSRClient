@@ -1,1 +1,49 @@
-<p>product-edit works!</p>
+<app-main-menu></app-main-menu>
+<div class="component">
+    <table class="table table-striped table-sm">
+        <tr>
+            <td>Id</td>
+            <td>
+                <input [ngModel]="product.id" type="text" size="10" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>PartNbr</td>
+            <td>
+                <input [ngModel]="product.partNbr" type="text" size="10" >
+            </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input [ngModel]="product.name" type="text" size="20" >
+            </td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>
+                <input [ngModel]="product.price" type="number" size="20" >
+            </td>
+        </tr>
+        <tr>
+            <td>Unit</td>
+            <td>
+                <input [ngModel]="product.id" type="text" size="10" >
+            </td>
+        </tr>
+        <tr>
+            <td>Vendor</td>
+            <td>
+                <select [(ngModel)]="product.vendorId">
+                    <option *ngFor="let v of vendors" value="{{+v.id}}">{{v.name}}</option>
+                    <option value=""></option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="save()" class="btn btn-danger">Save</button>
+            </td>
+        </tr>
+    </table>
+</div>

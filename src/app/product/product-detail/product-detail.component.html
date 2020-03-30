@@ -31,16 +31,10 @@
                 <input [ngModel]="product.id" type="text" size="10" disabled>
             </td>
         </tr>
-        <tr *ngIf="product.vendor">
+        <tr>
             <td>Vendor</td>
             <td>
-                <input [ngModel]="product.vendor.name" type="text" disabled>
-            </td>
-        </tr>
-        <tr *ngIf="!product.vendor">
-            <td>Vendor</td>
-            <td>
-                <input value="UNDECLARED" type="text" disabled>
+                <input [ngModel]="product.vendor.name" type="text" size="20" disabled>
             </td>
         </tr>
         <tr>

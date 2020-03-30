@@ -7,7 +7,7 @@ const url:string="http://localhost:58727/api/users";
   providedIn: 'root'
 })
 export class UserService {
-//  [x: string]: any;
+
   list():Observable<User[]>{
     return this.http.get(`${url}`)as Observable<User[]>;
   }

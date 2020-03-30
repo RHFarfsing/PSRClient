@@ -12,11 +12,11 @@ export class ProductDetailComponent implements OnInit {
   product: Product = new Product();
   constructor(
     private route:ActivatedRoute,
-    private productsvc: ProductService,
+    private prodsvc: ProductService,
     private router: Router
   ) { }
     delete(): void{
-      this.productsvc.remove(this.product).subscribe(
+      this.prodsvc.remove(this.product).subscribe(
         res=>{
           console.debug("Product delete successful!", res);
         },
@@ -27,7 +27,7 @@ export class ProductDetailComponent implements OnInit {
     }
   ngOnInit(): void {
     let id = this.route.snapshot.params.id;
-    this.productsvc.get(id).subscribe(
+    this.prodsvc.get(id).subscribe(
       res=>{
         this.product=res;
         console.debug("Product:", res);
