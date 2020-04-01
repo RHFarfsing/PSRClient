@@ -4,7 +4,7 @@
         <tr>
             <td>Id</td>
             <td>
-                <input [ngModel]="product.id" type="text" size="10" disabled>
+                <input [ngModel]="product.id" type="number" size="10" disabled>
             </td>
         </tr>
         <tr>
@@ -28,13 +28,19 @@
         <tr>
             <td>Unit</td>
             <td>
-                <input [ngModel]="product.id" type="text" size="10" disabled>
+                <input [ngModel]="product.unit" type="text" size="10" disabled>
             </td>
         </tr>
-        <tr>
+        <tr *ngIf="product.vendor">
             <td>Vendor</td>
             <td>
                 <input [ngModel]="product.vendor.name" type="text" size="20" disabled>
+            </td>
+        </tr>
+        <tr *ngIf="!product.vendor">
+            <td>Vendor</td>
+            <td>
+                <input [ngModel]="" type="text" disabled>
             </td>
         </tr>
         <tr>

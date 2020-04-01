@@ -19,6 +19,7 @@ export class ProductDetailComponent implements OnInit {
       this.prodsvc.remove(this.product).subscribe(
         res=>{
           console.debug("Product delete successful!", res);
+          this.router.navigateByUrl("/products/list");
         },
         err=>{
           console.error("Product delete failed!", err);

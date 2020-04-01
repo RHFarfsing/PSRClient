@@ -12,6 +12,10 @@ import { VendorListComponent } from './vendor/vendor-list/vendor-list.component'
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
 const routes: Routes = [
   {path:"",redirectTo:"/users/list",pathMatch:"full"},
   {path:"users/list",component:UserListComponent},
@@ -26,6 +30,10 @@ const routes: Routes = [
   {path:"vendors/detail/:id",component:VendorDetailComponent},
   {path:"vendors/create",component:VendorCreateComponent},
   {path:"vendors/edit/:id",component:VendorEditComponent},
+  {path:"requests/list",component:RequestListComponent},
+  {path:"requests/detail/:id",component:RequestDetailComponent},
+  {path:"requests/edit/:id",component:RequestEditComponent},
+  {path:"requests/create",component:RequestCreateComponent},
   {path:"**", component: UserListComponent}
 ];
 @NgModule({

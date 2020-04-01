@@ -14,7 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductEditComponent implements OnInit {
   product: Product = new Product();
   vendors: Vendor[]=[];
-  sava():void{
+  save():void{
     this.product.vendorId=Number(this.product.vendorId);
     this.prodsvc.change(this.product).subscribe(
       res=>{
@@ -31,14 +31,14 @@ export class ProductEditComponent implements OnInit {
     private vendorsvc: VendorService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
-
-  ngOnInit(): void {
-    this.vendorsvc.list().subscribe(
-      res=>{
-        this.vendors=res;
-        console.debug("Vendors:",res);
-      },
+    ) { }
+    
+    ngOnInit(): void {
+      this.vendorsvc.list().subscribe(
+        res=>{
+          this.vendors=res;
+          console.debug("Vendors:",res);
+        },
       err=>{
         console.error("Error reading product", err);
       }

@@ -6,7 +6,7 @@ export class Product {
     name:string='';
     price:number=0;
     unit:string='';
-    vendorId?:number=0;
+    vendorId:number=0;
     vendor: Vendor = null;
 
 }
