@@ -17,7 +17,7 @@ export class RequestListComponent implements OnInit {
     this.request.list().subscribe(
       res=>{
         this.requests = res;
-        console.debug("Request-list Requests", res);
+        console.debug("Requests", res);
       },
       err=>{
         console.error(err);
