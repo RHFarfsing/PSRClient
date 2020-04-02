@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.class';
 import { Vendor } from 'src/app/vendor/vendor.class';
-import { throwError } from 'rxjs';
 import { ProductService } from '../product.service';
 import { VendorService } from 'src/app/vendor/vendor.service';
 import { ActivatedRoute, Router } from '@angular/router';

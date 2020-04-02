@@ -22,13 +22,13 @@
         <tr>
             <td>RejectionReason</td>
             <td>
-                <input [(ngModel)]="request.rejectionreason" type="text" siz="20" disabled>
+                <input [(ngModel)]="request.rejectionReason" type="text" siz="20" disabled>
             </td>
         </tr>
         <tr>
             <td>DeliveryMode</td>
             <td>
-                <input [(ngModel)]="request.deliverymode" type="text" siz="20" disabled>
+                <input [(ngModel)]="request.deliveryMode" type="text" siz="20" disabled>
             </td>
         </tr>
         <tr>
@@ -47,6 +47,11 @@
             <td>User</td>
             <td>
                 <input [(ngModel)]="request.user.username" type="text" siz="20" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button (click)="delete()" class="btn btn-danger">Delete</button>
             </td>
         </tr>
     </table>
