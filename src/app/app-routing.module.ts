@@ -16,6 +16,9 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestLineEditComponent } from './requestLine/request-line-edit/request-line-edit.component';
+import { RequestLineCreateComponent } from './requestLine/request-line-create/request-line-create.component';
+import { RequestLineComponent } from './requestLine/request-line/request-line.component';
 const routes: Routes = [
   {path:"",redirectTo:"/users/list",pathMatch:"full"},
   {path:"users/list",component:UserListComponent},
@@ -34,6 +37,9 @@ const routes: Routes = [
   {path:"requests/detail/:id",component:RequestDetailComponent},
   {path:"requests/edit/:id",component:RequestEditComponent},
   {path:"requests/create",component:RequestCreateComponent},
+  {path:"requestlines/requestline/:id",component:RequestLineComponent},
+  {path:"requestlines/edit/:id",component:RequestLineEditComponent},
+  {path:"requestlines/create",component:RequestLineCreateComponent},
   {path:"**", component: UserListComponent}
 ];
 @NgModule({

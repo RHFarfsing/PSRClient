@@ -22,10 +22,9 @@ import { RequestListComponent } from './request/request-list/request-list.compon
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
-import { RequestLineListComponent } from './requestLine/request-line-list/request-line-list.component';
-import { RequestLineDetailComponent } from './requestLine/request-line-detail/request-line-detail.component';
 import { RequestLineEditComponent } from './requestLine/request-line-edit/request-line-edit.component';
 import { RequestLineCreateComponent } from './requestLine/request-line-create/request-line-create.component';
+import { RequestLineComponent } from './requestLine/request-line/request-line.component';
 
 @NgModule({
   declarations: [
@@ -48,10 +47,9 @@ import { RequestLineCreateComponent } from './requestLine/request-line-create/re
     RequestDetailComponent,
     RequestEditComponent,
     RequestCreateComponent,
-    RequestLineListComponent,
-    RequestLineDetailComponent,
     RequestLineEditComponent,
     RequestLineCreateComponent,
+    RequestLineComponent,
   ],
   imports: [
     BrowserModule,

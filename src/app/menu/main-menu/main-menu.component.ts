@@ -11,8 +11,7 @@ export class MainMenuComponent implements OnInit {
     new Menu('Users','/users/list','The User List Page'),
     new Menu('Products','/products/list','The Product List Page'),
     new Menu('Vendors','/vendors/list','The Vendor List Page'),
-    new Menu('Requests','/requests/list','The Request List Page'),
-    new Menu('RequestLines','/requestlines/list','The Requestline List Page')
+    new Menu('Requests','/requests/list','The Request List Page')
   ];
   constructor() { }
   ngOnInit(): void {

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RequestLine } from './request-line.class';
 import { HttpClient } from '@angular/common/http';
-const url:string="http://localhost:"
+const url:string="http://localhost:58727/api/requestlines";
 @Injectable({
   providedIn: 'root'
 })
