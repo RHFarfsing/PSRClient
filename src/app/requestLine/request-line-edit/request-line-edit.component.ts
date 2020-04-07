@@ -14,6 +14,8 @@ import { Product } from 'src/app/product/product.class';
 })
 export class RequestLineEditComponent implements OnInit {
   requestLine:RequestLine=new RequestLine();
+  product:Product;
+  request:Request;
   save():void{
     this.reqsvc.change(this.requestLine).subscribe(
       res=>{
@@ -29,9 +31,7 @@ export class RequestLineEditComponent implements OnInit {
     private reqsvc:RequestLineService,
     private route:ActivatedRoute,
     private router:Router,
-    private requestsvc:RequestService,
-    private request:Request,
-    private product:Product
+    private requestsvc:RequestService
   ) { }
 
   ngOnInit(): void {

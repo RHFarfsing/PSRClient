@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { VendorService } from '../vendor.service';
 import { Vendor } from '../vendor.class';
+import { SortByPipe } from 'src/app/pipe/sort.pipe';
 
 @Component({
   selector: 'app-vendor-list',
@@ -9,8 +10,10 @@ import { Vendor } from '../vendor.class';
 })
 export class VendorListComponent implements OnInit {
   vendors: Vendor[]=[];
+  
   constructor(
-    private vendor: VendorService
+    private vendor: VendorService,
+    //private sort: SortByPipe
   ) { }
 
   ngOnInit(): void {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RequestLine } from '../request-line.class';
 import { RequestLineService } from '../request-line.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from 'src/app/product/product.class';
 
 @Component({
   selector: 'app-request-line-create',
@@ -11,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RequestLineCreateComponent implements OnInit {
   requestLine: RequestLine;
   requestId: number;
+  product: Product;
   save():void{
     this.requestLine.requestId=this.requestId;
     this.reqLinesvc.create(this.requestLine).subscribe(

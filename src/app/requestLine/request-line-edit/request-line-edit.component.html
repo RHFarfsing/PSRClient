@@ -4,7 +4,7 @@
             <td>Product</td>
             <td>
                 <select [(ngModel)]="requestLine.productId">
-                    <option *ngFor="let p of products" value="{{p.id}}">{{p.name}}</option>
+                    <option *ngFor="let p of product.requestLines" value="{{p.id}}">{{p.name}}</option>
                 </select>
             </td>
         </tr>

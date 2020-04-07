@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
-import { SortPipe } from 'src/app/pipe/sort.pipe';
+import { SortByPipe } from 'src/app/pipe/sort.pipe';
 
 @Component({
   selector: 'app-request-list',
@@ -12,7 +12,7 @@ export class RequestListComponent implements OnInit {
   requests: Request[]=[];
   constructor(
     private request: RequestService,
-    //private sort: SortPipe
+    //private sort: SortByPipe
   ) { }
 
   ngOnInit(): void {
