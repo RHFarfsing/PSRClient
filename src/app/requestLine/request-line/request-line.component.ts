@@ -11,7 +11,7 @@ import { RequestLineService } from '../request-line.service';
   styleUrls: ['./request-line.component.css']
 })
 export class RequestLineComponent implements OnInit {
-  requestLines: RequestLine[]=[];
+  // requestLines: RequestLine[]=[];
   request: Request;
   requestId: number = 0;
   delete(requestLines:RequestLine):void{

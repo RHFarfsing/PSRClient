@@ -25,7 +25,6 @@ import { RequestCreateComponent } from './request/request-create/request-create.
 import { RequestLineEditComponent } from './requestLine/request-line-edit/request-line-edit.component';
 import { RequestLineCreateComponent } from './requestLine/request-line-create/request-line-create.component';
 import { RequestLineComponent } from './requestLine/request-line/request-line.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -52,7 +51,6 @@ import { LoginComponent } from './login/login.component';
     RequestLineEditComponent,
     RequestLineCreateComponent,
     RequestLineComponent,
-    HomeComponent,
     LoginComponent,
   ],
   imports: [

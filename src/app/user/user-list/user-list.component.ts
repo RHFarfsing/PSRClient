@@ -12,7 +12,7 @@ export class UserListComponent implements OnInit {
   users: User[]=[];
   constructor(
     private user: UserService,
-    //private sort: SortByPipe
+    
   ) { }
   ngOnInit(): void {
     this.user.list().subscribe(

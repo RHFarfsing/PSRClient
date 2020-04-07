@@ -12,14 +12,7 @@ export class AppComponent {
   currentUser: User;
   title = 'PSR Client';
   constructor(
-    private router:Router,
-    private authsvc:AuthenticationService
   ){
-    this.authsvc.currentUser.subscribe(x=>this.currentUser=x);
-  }
-  logout(){
-    this.authsvc.logout();
-    this.router.navigate(['/login']);
   }
 }
 
