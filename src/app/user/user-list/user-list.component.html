@@ -15,7 +15,7 @@
                 <th>IsAdmin</th>
             </tr>
         </thead>
-        <tr *ngFor="let u of users | sort:'username'">
+        <tr *ngFor="let u of users | sortBy:'+username'">
             <td>{{u.id}}</td>
             <td>{{u.username}}</td>
             <td>{{u.password}}</td>

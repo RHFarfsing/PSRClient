@@ -23,6 +23,12 @@ export class UserService {
   remove(user: User): Observable<any> {
     return this.http.delete(`${url}/${user.id}`)as Observable<User>;
   }
+  getAll(){
+    return this.http.get<User[]>(`${url}/Users`);
+  }
+  delete(id: number){
+    return this.http.delete(`${url}/users/${id}`);
+  }
   constructor(
     private http: HttpClient
   ) { }

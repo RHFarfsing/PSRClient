@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { User } from './user/user.class';
+import { Router } from '@angular/router';
+import { AuthenticationService } from './system/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  currentUser: User;
   title = 'PSR Client';
+  constructor(
+    private router:Router,
+    private authsvc:AuthenticationService
+  ){
+    this.authsvc.currentUser.subscribe(x=>this.currentUser=x);
+  }
+  logout(){
+    this.authsvc.logout();
+    this.router.navigate(['/login']);
+  }
 }
+

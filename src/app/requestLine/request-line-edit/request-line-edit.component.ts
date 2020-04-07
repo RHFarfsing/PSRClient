@@ -31,7 +31,7 @@ export class RequestLineEditComponent implements OnInit {
     private router:Router,
     private requestsvc:RequestService,
     private request:Request,
-    private product: Product
+    private product:Product
   ) { }
 
   ngOnInit(): void {

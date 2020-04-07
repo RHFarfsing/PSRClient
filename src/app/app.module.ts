@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserListComponent } from './user/user-list/user-list.component';
-import { SortPipe } from './pipe/sort.pipe';
+import { SortByPipe } from './pipe/sort.pipe';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
@@ -25,6 +25,8 @@ import { RequestCreateComponent } from './request/request-create/request-create.
 import { RequestLineEditComponent } from './requestLine/request-line-edit/request-line-edit.component';
 import { RequestLineCreateComponent } from './requestLine/request-line-create/request-line-create.component';
 import { RequestLineComponent } from './requestLine/request-line/request-line.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { RequestLineComponent } from './requestLine/request-line/request-line.co
     UserDetailComponent,
     UserCreateComponent,
     UserEditComponent,
-    SortPipe,
+    SortByPipe,
     MainMenuComponent,
     ProductListComponent,
     ProductDetailComponent,
@@ -50,6 +52,8 @@ import { RequestLineComponent } from './requestLine/request-line/request-line.co
     RequestLineEditComponent,
     RequestLineCreateComponent,
     RequestLineComponent,
+    HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

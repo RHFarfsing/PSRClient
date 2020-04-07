@@ -13,7 +13,7 @@
                 <th>Email</th>
             </tr>
         </thead>
-        <tr *ngFor="let v of vendors | sort:'code'">
+        <tr *ngFor="let v of vendors | sortBy:'code'">
             <td>{{v.id}}</td>
             <td>{{v.code}}</td>
             <td>{{v.name}}</td>

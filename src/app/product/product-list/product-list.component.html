@@ -11,7 +11,7 @@
             <th>Unit</th>
             <th>Vendor</th>
         </tr>
-        <tr *ngFor="let p of products | sort:'partNbr'">
+        <tr *ngFor="let p of products | sortBy:'partNbr'">
             <td>{{p.id}}</td>
             <td>{{p.partNbr}}</td>
             <td>{{p.name}}</td>
