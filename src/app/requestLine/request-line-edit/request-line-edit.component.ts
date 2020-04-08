@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from 'src/app/request/request.service';
 import { Request } from 'src/app/request/request.class';
 import { Product } from 'src/app/product/product.class';
+import { ProductService } from 'src/app/product/product.service';
 
 
 @Component({
@@ -14,9 +15,10 @@ import { Product } from 'src/app/product/product.class';
 })
 export class RequestLineEditComponent implements OnInit {
   requestLine:RequestLine=new RequestLine();
-  product:Product;
+  product:Product[]=[];
   request:Request;
   save():void{
+    this.requestLine.productId=Number(this.requestLine.productId);
     this.reqsvc.change(this.requestLine).subscribe(
       res=>{
         console.debug("RequestLine change successful", res);
@@ -31,7 +33,8 @@ export class RequestLineEditComponent implements OnInit {
     private reqsvc:RequestLineService,
     private route:ActivatedRoute,
     private router:Router,
-    private requestsvc:RequestService
+    private requestsvc:RequestService,
+    private productsvc:ProductService
   ) { }
 
   ngOnInit(): void {
@@ -43,6 +46,25 @@ export class RequestLineEditComponent implements OnInit {
       },
       err=>{
         console.error("editing error", err);
+      }
+    );
+    this.productsvc.list().subscribe(
+      res=>{
+        this.product=res;
+        console.debug("Products:", res);
+      },
+      err=>{
+        console.error("Error reading", err);
+      }
+    );
+    let id=this.route.snapshot.params.id;
+    this.reqsvc.get(id).subscribe(
+      res=>{
+        this.requestLine=res;
+        console.debug("RequestLine:", res);
+      },
+      err=>{
+        console.error("Error", err);
       }
     );
   }

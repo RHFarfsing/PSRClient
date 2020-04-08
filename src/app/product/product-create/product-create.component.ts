@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.class';
 import { Vendor } from 'src/app/vendor/vendor.class';
 import { ProductService } from '../product.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, } from '@angular/router';
 import { VendorService } from 'src/app/vendor/vendor.service';
 
 @Component({
@@ -28,8 +28,7 @@ export class ProductCreateComponent implements OnInit {
   constructor(
     private prodsvc: ProductService,
     private router: Router,
-    private vendorsvc: VendorService,
-    private route:ActivatedRoute
+    private vendorsvc: VendorService
   ) { }
 
   ngOnInit(): void {

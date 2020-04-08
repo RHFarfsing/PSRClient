@@ -10,11 +10,14 @@ export class RequestLineService {
   list():Observable<RequestLine[]>{
     return this.http.get(`${url}`)as Observable<RequestLine[]>;
   }
+  get(id: any): Observable<RequestLine>{
+    return this.http.get(`${url}/${id}`)as Observable<RequestLine>;
+  }
   change(requestLine: RequestLine):Observable<any>{
     return this.http.put(`${url}/${requestLine.id}`, requestLine)as Observable<any>;
   }
   create(requestLine: RequestLine): Observable<RequestLine>{
-    return this.http.post(`${url}/${requestLine.requestId}`, requestLine)as Observable<RequestLine>;
+    return this.http.post(`${url}`, requestLine)as Observable<RequestLine>;
   }
   remove(requestLine: RequestLine): Observable<RequestLine>{
     return this.http.delete(`${url}/${requestLine.id}`)as Observable<RequestLine>;

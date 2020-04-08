@@ -1,26 +1,38 @@
 <app-main-menu></app-main-menu>
 <label>Request Line List</label> | 
+<a routerLink="/requestlines/create/{{requestId}}">Create</a> | 
 <div class="component">
-    <table  *ngIf="request">
+    <table  class="table table-striped table-sm" *ngIf="request">
         <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>User</th>
+        </tr>
+        <tr>
+            <td>{{request.id}}</td>
             <td>{{request.description}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total}}</td>
+            <td>{{request.userId != null ? request.user.username : "UNDECLARED"}}</td>
         </tr>
     </table>
-    <table class="table" *ngIf="request">
+    <table class="table table-striped table-sm" *ngIf="request">
         <tr>
             <th>Product</th>
             <th>Quantity</th>
             <th>Product Price</th>
             <th>Total</th>
         </tr>
-        <tr *ngFor="let l of request.requestlines; indexed as i;">
-            <td>{{i}}-{{request.description}}</td>
+        <tr *ngFor="let l of request.requestLines">
             <td>{{l.product.name}}</td>
             <td>{{l.quantity}}</td>
             <td>{{l.product.price}}</td>
             <td>{{l.product.price * l.quantity | currency}}</td>
             <td>
-                <a routerLink="/requestlines/edit/{{l.request.id}}">Edit</a>
+                <a routerLink="/requestlines/edit/{{l.request.id}}">Edit</a> | 
+                <button (click)="delete(l)" class="btn btn-link">Delete</button>
             </td>
         </tr>
     </table>

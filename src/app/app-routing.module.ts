@@ -40,7 +40,7 @@ const routes: Routes = [
   {path:"requests/create",component:RequestCreateComponent},
   {path:"requestlines/requestline/:id",component:RequestLineComponent},
   {path:"requestlines/edit/:id",component:RequestLineEditComponent},
-  {path:"requestlines/create",component:RequestLineCreateComponent},
+  {path:"requestlines/create/:id",component:RequestLineCreateComponent},
   {path:"login",component:LoginComponent},
   {path:"**", component: UserListComponent}
 ];
