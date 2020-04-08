@@ -10,6 +10,39 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RequestDetailComponent implements OnInit {
   request: Request = new Request();
+  setToReview():void{
+    this.requestsvc.setToReview(this.request).subscribe(
+      res=>{
+        console.debug("worked", res);
+        this.router.navigateByUrl("/requests/list");
+      },
+      err=>{
+        console.error("error", err);
+      }
+    );
+  }
+  setToApproved():void{
+    this.requestsvc.setToApproved(this.request).subscribe(
+      res=>{
+        console.debug("worked", res);
+        this.router.navigateByUrl("/requests/list");
+      },
+      err=>{
+        console.error("error", err);
+      }
+    );
+  }
+  setToRejected():void{
+    this.requestsvc.setToRejected(this.request).subscribe(
+      res=>{
+        console.debug("worked", res);
+        this.router.navigateByUrl("/requests/list");
+      },
+      err=>{
+        console.error("error", err);
+      }
+    );
+  }
   delete():void{
     this.requestsvc.remove(this.request).subscribe(
       res=>{

@@ -27,6 +27,7 @@ export class RequestLineComponent implements OnInit {
   refresh():void{
     this.requestsvc.get(this.requestId).subscribe(
       res=>{
+        this.request=res;
         console.debug("refresh worked", res);
       },
       err=>{

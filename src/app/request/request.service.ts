@@ -10,6 +10,15 @@ export class RequestService {
   list(): Observable<Request[]>{
     return this.http.get(`${url}`)as Observable<Request[]>;
   }
+  setToReview(request: Request): Observable<any>{
+    return this.http.put(`${url}/review`, request)as Observable<any>;
+  }
+  setToApproved(request: Request): Observable<any>{
+    return this.http.post(`${url}/approved`, request)as Observable<any>;
+  }
+  setToRejected(request: Request): Observable<any>{
+    return this.http.post(`${url}/rejected`, request)as Observable<any>;
+  }
   get(id: any): Observable<Request>{
     return this.http.get(`${url}/${id}`)as Observable<Request>;
   }
